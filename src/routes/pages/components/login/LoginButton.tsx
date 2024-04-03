@@ -1,6 +1,5 @@
 import { Button, styled} from "@mui/material";
-import { typographytheme } from "../../themes/Typography";
-import { darktheme } from "../../themes/Dark";
+import { darktheme, typographytheme } from "../../../../assets";
 
 const CustomizeLoginbutton = styled(Button)({
     backgroundColor: darktheme.palette.secondary.main,

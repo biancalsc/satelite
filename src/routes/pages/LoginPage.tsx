@@ -1,7 +1,6 @@
 import { Grid, Box } from "@mui/material";
-import LoginForm from "../components/Login/LoginForm";
-import { darktheme } from "../themes/Dark";
-import LogoCentered from "../components/Login/LogoCentered";
+import { LoginForm, LogoCentered } from "./components";
+import { darktheme } from "../../assets";
 
 export const LoginPage = () => {
   return (
