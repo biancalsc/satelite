@@ -1,5 +1,5 @@
 import Home from "./home/Home"
-import { Login } from "./login/Login"
+import { Login } from "./Login"
 import { Private } from "./private/Private"
 import User from "./user/User"
 

@@ -3,7 +3,7 @@
 //Se estiver, mostra a página que ele gostaria de acessar (user)
 
 import { useContext } from "react";
-import { Login } from "../../pages/login/Login";
+import { Login } from "../../pages/Login";
 import { AuthContext } from "./Authcontext";
 
 export const RequireAuth = ({ children }: { children: JSX.Element}) => {
