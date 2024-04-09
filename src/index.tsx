@@ -3,7 +3,6 @@ import React from "react";
 import { createBrowserRouter, RouterProvider } from "react-router-dom";
 import { Error404Page, LoginPage, MainPage } from "./routes";
 
-
 const root = ReactDOM.createRoot(
   document.getElementById("root") as HTMLElement
 );

@@ -1,6 +1,7 @@
 import { styled } from '@mui/material/styles';
 import FormControlLabel from '@mui/material/FormControlLabel';
 import Switch from '@mui/material/Switch';
+import { useAppThemeContext } from '../../../../assets/contexts';
 
 
 const MaterialUISwitch = styled(Switch)(({ theme }) => ({
@@ -50,10 +51,11 @@ const MaterialUISwitch = styled(Switch)(({ theme }) => ({
     },
 }));
 export default function ThemeSwitch() {
+    const {toggleTheme} = useAppThemeContext();
     return (
         <FormControlLabel
             control={<MaterialUISwitch sx={{ m: 1 }} defaultChecked />}
-            label=""
+            label="" onClick={toggleTheme}
         />
     );
 }

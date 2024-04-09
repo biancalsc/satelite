@@ -1,6 +1,12 @@
+import { BrowserRouter } from "react-router-dom";
+import { AppThemeProvider } from "./assets/contexts/ThemeContext";
+
 function App() {
   return (
-    <div>olá!</div>
+    <AppThemeProvider>
+      <BrowserRouter>
+      </BrowserRouter>
+    </AppThemeProvider>
   )
 };
 

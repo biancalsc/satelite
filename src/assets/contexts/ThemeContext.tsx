@@ -8,13 +8,17 @@ interface IThemeContextData{
     toggleTheme:() => void;
 }
 
+interface IAppThemeProviderProps{
+    children:React.ReactNode
+}
+
 const ThemeContext = createContext({} as IThemeContextData);
 
 export const useAppThemeContext = () => {
     return useContext(ThemeContext);
 }
 
-export const AppThemeProvider: React.FC = ({children}) =>{
+export const AppThemeProvider: React.FC<IAppThemeProviderProps> = ({ children }) =>{
     const [themeName, setThemeName] = useState<'light' | 'dark'>('light');
 
     const toggleTheme = useCallback(()=>{
@@ -22,17 +26,17 @@ export const AppThemeProvider: React.FC = ({children}) =>{
     },[]);
 
     const theme = useMemo(()=>{
-        if (themeName === 'light')return lighttheme;
-        return darktheme;
+        if (themeName === 'dark') return darktheme;
+        return lighttheme;
     },[themeName]);
 
-    return(
-        <ThemeContext.Provider value={{themeName,toggleTheme}}>
+    return (
+        <ThemeContext.Provider value={{ themeName, toggleTheme }}>
             <ThemeProvider theme={theme}>
                 <Box width="100vw" height="100vh" bgcolor={theme.palette.background.default}>
                     {children}
                 </Box>
             </ThemeProvider>
         </ThemeContext.Provider>
-    )
+    );
 }
